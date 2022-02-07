@@ -1,0 +1,24 @@
+name: CI
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Setup Python
+        uses: actions/setup-python@v2.3.2
+        with:
+          python-version: 3.8
+          
+      - name: Install Universum
+        run: pip install --upgrade git+https://github.com/dogbert911/Universum.git@add-github-actions-out
+        
+      - name: Run universum tests
+        run: python -u -m universum
+          --vcs-type git
+          --git-repo https://github.com/dogbert911/universum_test.git
+        
