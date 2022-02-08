@@ -5,7 +5,6 @@ configs = Configuration([
   Step('Success stderr', command=['./test.sh', 'Error text', '20', '2', '0' ]),
   Step('Error stderr', command=['./test.sh', 'Error text', '20', '2', '1' ]),
   Step('Error stdout', command=['./test.sh', 'Normal text', '20', '1', '2' ]),
-  Step('Critical step', command=['./test.sh', 'Normal text', '20', '1', '2' ], critical=True),
 ]) + Configuration([Step('Main nested step', command=['./test.sh', 'Text', '5', '1', '0' ])]) * Configuration([
   Step('Nested success', command=['./test.sh', 'Some text', '20', '1', '0' ]),
   Step('Nested error stderr', command=['./test.sh', 'Error text', '20', '2', '1' ]),
