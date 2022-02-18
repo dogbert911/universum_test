@@ -18,7 +18,7 @@ jobs:
       - name: Install Universum
         run: |
           pip install universum[git]
-          pip install --upgrade git+https://github.com/dogbert911/Universum.git@add-github-actions-out-test
+          pip install --upgrade git+https://github.com/dogbert911/Universum.git@add-github-actions-out
         
       - name: Run Universum
         run: python -u -m universum
